@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Hello World</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script> 
+  </head>
+  
+  
+  <body>
+    <script>
+      console.log(d3);// Test if d3 is loaded
+      // Add an SVG
+      var paper = d3.select("body")
+                  .append("svg")
+                  .attr("width",500)
+                  .attr("height",500);
+      // Location
+      var width = 100;
+      var height = 150;
+      var ox=250;
+      var oy=250;
+      
+      // Add Rectangles
+      var rect = paper.append("rect")
+                    .attr("x",ox-width)
+                    .attr("y",oy-height)
+                    .attr("width",2*width)
+                    .attr("height",2*height)
+                    .attr("stroke","rgb(0,153,204)")
+                    .attr("stroke-width",10)
+                    .attr("fill","white");
+                    
+      // Add Circles
+      var cicrcle = paper.append("circle")
+                    .attr("cx",ox)
+                    .attr("cy",oy)
+                    .attr("r",width)
+                    .attr("fill","rgb(51,170,170)");
+      // Add Lines
+      var line = paper.append("line")
+                    .attr("x1",ox-2*width)
+                    .attr("y1",oy)
+                    .attr("x2",ox+2*width)
+                    .attr("y2",oy)
+                    .attr("stroke","rgb(102,187,136)")
+                    .attr("stroke-width",15);
+      // Add Polygons
+      var polygon = paper.append("polygon")
+                    .attr("points","150,350, 350,350, 450,250, 350,150, 150,150, 50,250")
+                    .attr("fill","white")
+                    .attr("opacity","0.3")
+                    .attr("stroke","rgb(153,204,102)")
+                    .attr("stroke-width",8);
+    </script>
+  </body>
+  
+</html>
+
